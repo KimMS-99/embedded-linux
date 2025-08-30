@@ -1,0 +1,9 @@
+CC := $(CROSS_COMPILE)gcc
+CFLAGS := -O2 -Wall
+
+all: hello
+hello: hello.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+clean:
+	rm -f hello

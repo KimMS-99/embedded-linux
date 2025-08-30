@@ -1,0 +1,225 @@
+# =========================
+# OS / 일반 임시파일
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+*.orig
+*.lock
+*.log
+.cache/
+core
+core.*
+
+# =========================
+# 공통 C/C++ 빌드 산출물
+# =========================
+build/
+*/build/
+out/
+obj/
+bin/
+lib/*.a
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.d
+*.i
+*.s
+*.su
+*.dwo
+*.map
+*.lst
+
+# 코드 커버리지
+*.gcno
+*.gcda
+*.gcov
+coverage/
+*.lcov
+
+# ctags / cscope
+tags
+TAGS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+# =========================
+# 임베디드 펌웨어/이미지
+# =========================
+*.elf
+*.hex
+*.bin
+*.srec
+*.mot
+
+# 디스크/이미지(QEMU 등)
+*.img
+*.img.*
+*.iso
+*.qcow2
+*.vdi
+*.vmdk
+
+# =========================
+# Linux 커널 / 모듈 빌드
+# =========================
+*.ko
+*.mod
+*.mod.c
+*.symvers
+Module.symvers
+modules.order
+*.order
+*.cmd
+# 커널 설정(개인 로컬용은 보통 커밋하지 않음)
+linux/.config
+linux/.config.old
+linux/include/generated/
+linux/include/config/auto.conf
+linux/include/config/auto.conf.cmd
+# 커널 산출물(레포에 커널 소스를 별도 폴더로 둘 때)
+linux/vmlinux
+linux/System.map
+linux/arch/*/boot/*
+# 디바이스 트리(소스는 커밋, 산출물은 제외)
+*.dtb
+*.dtbo
+*.dtb.*
+
+# =========================
+# U-Boot
+# =========================
+# (추천) 트리 밖(out-of-tree) 빌드 디렉터리
+build-u-boot/
+uboot-build*/
+
+# (프로젝트 안에 u-boot 소스 폴더가 있을 때: in-tree 패턴)
+u-boot/.config
+u-boot/.config.old
+u-boot/include/generated/
+u-boot/include/config/auto.conf
+u-boot/include/config/auto.conf.cmd
+u-boot/include/autoconf.mk
+
+# U-Boot 산출물
+u-boot/u-boot
+u-boot/u-boot.elf
+u-boot/u-boot.bin
+u-boot/u-boot.img
+u-boot/u-boot.itb
+u-boot/u-boot.srec
+u-boot/u-boot.map
+u-boot/u-boot.dtb
+u-boot/u-boot-dtb.bin
+u-boot/u-boot-nodtb.bin
+u-boot/u-boot.imx
+u-boot/u-boot-with-spl.bin
+u-boot/SPL
+u-boot/TPL
+u-boot/MLO
+u-boot/spl/
+u-boot/tpl/
+u-boot/arch/*/dts/*.dtb
+u-boot/arch/*/dts/*.dtbo
+u-boot/arch/*/dts/*.dtb.*
+
+# U-Boot 도구 빌드 산출물
+u-boot/tools/*.o
+u-boot/tools/*.d
+u-boot/tools/mkimage
+
+# =========================
+# Yocto / OpenEmbedded
+# =========================
+# (보통 build 디렉토리와 캐시는 커밋하지 않음)
+build/
+yocto/build/
+yocto/tmp/
+yocto/sstate-cache/
+yocto/downloads/
+yocto/cache/
+bitbake.lock
+bitbake-cookerdaemon.log
+# 로컬 설정(샘플은 커밋하고 실제 파일은 제외 권장)
+yocto/build/conf/local.conf
+yocto/build/conf/bblayers.conf
+
+# =========================
+# CMake / Meson / Autotools
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+cmake-build-*/
+builddir/
+meson-logs/
+meson-private/
+compile_commands.json.cache
+# compile_commands.json 은 IDE 연동용으로 커밋하기도 하므로 제외하지 않음
+
+# =========================
+# Qt / Qt Creator
+# =========================
+*.pro.user*
+*.user
+*.qmake.stash
+build-*/
+moc_*
+ui_*
+qrc_*
+*.qmlc
+*.jsc
+.qtc_clangd/
+
+# =========================
+# Python(스크립트/툴)
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints
+.env
+
+# =========================
+# IDE / Editor
+# =========================
+# VSCode: 기본은 무시하되 필요한 설정은 포함
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# JetBrains
+.idea/
+*.iml
+
+# Visual Studio
+.vs/
+
+# =========================
+# 아카이브(대용량 산출물은 릴리스로 배포)
+# =========================
+*.tar
+*.gz
+*.bz2
+*.xz
+*.zip
+*.7z
