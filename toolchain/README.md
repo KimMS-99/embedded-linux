@@ -292,9 +292,13 @@ $ ./helloworld_static
 B. GUI에서 실행 (QEMU 시스템모드: 데스크탑 창 + scp)
 
 ```bash
-# 우분투 패키지로 ARM64 크로스컴파일러 설치
-$ sudo apt install -y gcc-aarch64-linux-gnu
-$ aarch64-linux-gnu-gcc hello.c -o hello64
+# ARM64 크로스컴파일러
+$ mkdir -p ~/ctng-work/aarch64 && cd ~/ctng-work/aarch64
+$ ~/crosstool-ng/ct-ng aarch64-unknown-linux-gnu
+$ ~/crosstool-ng/ct-ng build
+$ echo 'export PATH="$HOME/x-tools/aarch64-unknown-linux-gnu/bin:$PATH"' >> ~/.bashrc
+$ source ~/.bashrc
+$ aarch64-unknown-linux-gnu-gcc hello.c -o hello
 ```
 
 ```bash
