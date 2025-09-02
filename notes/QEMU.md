@@ -1,5 +1,4 @@
 # QEMU
-QEMU는 에뮬레이터로 
 
 ## QEMU Install
 ```bash
@@ -116,7 +115,6 @@ exec qemu-system-aarch64 \
 EOF
 chmod +x ~/arm64-vm/run-vm-cli.sh
 ```
-
 이후 실행:
 ```bash
 # GUI로
@@ -124,4 +122,44 @@ $ ~/arm64-vm/run-vm-gui.sh
 
 # 또는 CLI로
 $ ~/arm64-vm/run-vm-cli.sh
+```
+
+4. QEMU로 U-Boot 실행
+```bash
+# QEMU로 u-boot 실행
+$ qemu-system-aarch64 -M virt -cpu cortex-a72 -m 1024 -nographic \
+  -bios build-qemu64/u-boot.bin
+# 종료: Ctrl+A, X
+
+# 스크립트로 실행하게 만들기
+$ vi run-uboot-qemu.sh
+set -euo pipefail
+
+cd /home/ubuntu03/embedded_linux/bootloader/u-boot
+
+# u-boot.bin 존재 확인
+if [[ ! -f build-qemu64/u-boot.bin ]]; then
+  echo "ERROR: build-qemu64/u-boot.bin 이 없습니다. 먼저 U-Boot를 빌드하세요." >&2
+  exit 1
+fi
+
+exec qemu-system-aarch64 \
+  -M virt -cpu cortex-a72 -m 1024 -nographic \
+  -bios build-qemu64/u-boot.bin
+
+$ chmod u+x run-uboot-qemu.sh
+```
+
+5. QEMU에 디스크 붙여서 U-Boot 실행
+```bash
+# 절대경로 변수 설정
+$ export DISK=/home/ubuntu03/embedded_linux/bootloader/disk_image/disk.img
+$ export UBOOT=/home/ubuntu03/embedded_linux/bootloader/u-boot/build-qemu64/u-boot.bin
+
+# QEMU 실행
+$ qemu-system-aarch64 \
+  -M virt -cpu cortex-a72 -m 1024 -nographic \
+  -bios "$UBOOT" \
+  -drive if=none,file="$DISK",format=raw,id=hd0 \
+  -device virtio-blk-device,drive=hd0
 ```
