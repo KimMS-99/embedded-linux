@@ -4,7 +4,7 @@
 본인에 디렉토리에 맞게 설정해야 함.
 ```bash
 # 내 워크스페이스
-$ BASE=~/embedded_linux/bootloader
+$ BASE=~/embedded-linux/bootloader
 $ UBOOT_DIR=$BASE/u-boot
 
 # SD가 자동 마운트될 경로 (lsblk 상 이미 확인됨)
@@ -461,7 +461,7 @@ $ sudo systemctl enable --now ab-mark-good.service
 SD카드 우분투에
 ### 1) 서명키(개발용 RSA) 생성
 ```bash
-$ BASE=~/embedded_linux/bootloader
+$ BASE=~/embedded-linux/bootloader
 $ UBOOT_DIR=$BASE/u-boot
 $ BOOT=/media/ubuntu03/bootfs 
 
