@@ -223,3 +223,33 @@ env/
 *.xz
 *.zip
 *.7z
+
+# build outputs
+build/
+*.o
+*.a
+*.so
+u-boot
+u-boot.*
+spl/
+tpl/
+MLO
+SPL
+*.itb
+*.img
+*.bin
+*.map
+*.lst
+*.log
+
+# keys & secrets
+fit-keys/*.key
+fit-keys/dev.key
+
+# local configs (필요 시만 공개)
+*.config
+.config.old
+
+# tarballs
+*.tar
+*.tar.*
