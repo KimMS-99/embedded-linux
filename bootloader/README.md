@@ -56,7 +56,7 @@ $ chmod u+x run-uboot-qemu.sh
 ### U-Boot 사용
 
 - `help` → 모든 명령어 목록 확인
--`printenv` → 현재 환경변수(bootcmd, bootargs, ipaddr 등) 확인
+- `printenv` → 현재 환경변수(bootcmd, bootargs, ipaddr 등) 확인
 - `bdinfo` → 보드/메모리 등 기본 보드 정보 출력
 - `versio` → U-Boot 버전 확인
 
