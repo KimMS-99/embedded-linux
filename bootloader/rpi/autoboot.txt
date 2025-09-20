@@ -1,0 +1,7 @@
+[all]
+# 평소(안정)에는 이 설정 파일을 사용
+config=config.txt
+
+[tryboot]
+# "시험 1회" 모드일 때만 이 설정 파일을 사용
+config=tryboot.txt

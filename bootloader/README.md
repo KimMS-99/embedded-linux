@@ -1,6 +1,7 @@
 # 부트로더
 [부트로더 설명](../notes/부트로더.md)<br>
-[장치 커널 설명](../notes/장치%20트리%20소개.md)
+[장치 커널 설명](../notes/장치%20트리%20소개.md)<br>
+[Slot기반 A/B Fallback](./host/AB_fallback.md)
 ## U-Boot
 U-Boot은 많은 수의 프로세서 아키텍처와 다수의 보드 및 장치를 지원한다.
 
